@@ -17,6 +17,7 @@ wss.on("connection", (socket: WebSocket) => {
     // Send the message to all users except the sender
     let filteredArray = allSockets.filter((user) => user !== socket);
 
+    // Complete the project
     filteredArray.forEach((socketElement) => {
       socketElement.send(message);
     });
